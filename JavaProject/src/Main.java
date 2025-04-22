@@ -94,7 +94,39 @@ public class Main {
         */
         Car myCar = new Car("Mercedes", "grey", "V8");
 
-        System.out.println(myCar.engine);
+        System.out.println(myCar.engine); //REFERENCE TYPE
         myCar.start();
+
+        /*WRAPPER CLASS = ALLOW PRIMITIVE VALUES TO BE USED AS OBJECTS "WRAP THEM IN AN OBJECT"
+                          ALLOW USE OF COLLECTION FRAMEWORK AND STATIC UTILITY METHODS
+        */
+        //AUTOBOXING = PRIMITIVE -> WRAPPER
+        Integer e = 5;
+        Double f = 5.99;
+        Character g = 'c';
+        Boolean h = true;
+
+        //UNBOXING = WRAPPER -> PRIMITIVE
+        int i = e;
+        double j = f;
+        char k = g;
+        boolean l = h;
+
+        //STATIC METHODS EXAMPLES
+        String m = Integer.toString(i);
+        String n = Double.toString(j);
+        String o = Character.toString(k);
+        String p = Boolean.toString(l);
+
+        String q = m + n + o + p;
+        System.out.println(q);
+
+        int a = Integer.parseInt("5");
+        double b = Double.parseDouble("5.99");
+        char c = "Pizza".charAt(0);
+        boolean d = Boolean.parseBoolean("true");
+
+        System.out.println(Character.isLetter(c));
+        System.out.println(Character.isUpperCase(c));
     }
 }
