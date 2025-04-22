@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -205,11 +207,31 @@ public class Main {
             System.out.println("Somethong went wrong");
             error.printStackTrace();
         }
-        
+
         //CSV FILE
         try(FileWriter writer = new FileWriter("C:\\Users\\valou\\OneDrive\\Bureau\\test.csv")){
             writer.write("name, age, nationality\n");
             writer.write("Valentin, 24, belgian\n");
+        }
+        catch(FileNotFoundException error){
+            System.out.println("Sorry, we cannot locate file location");
+        }
+        catch(IOException error){
+            System.out.println("Somethong went wrong");
+            error.printStackTrace();
+        }
+
+        /*READ FILES
+         BufferedReader + FileReader = BEST FOR READING TEXT FILES LINE BY LINE
+         FileInputStream = BEST FOR BINARY FILES
+         RandomAccessFile = BEST FOR READ / WRITE SPECIFIC PORTIONS OF LARGE FILE
+        */
+        try(BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\valou\\OneDrive\\Bureau\\test.txt"))){
+            System.out.println("That file exists!");
+            String line;
+            while((line = reader.readLine())!= null){
+                System.out.println(line);
+            }
         }
         catch(FileNotFoundException error){
             System.out.println("Sorry, we cannot locate file location");
