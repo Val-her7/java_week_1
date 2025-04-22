@@ -75,5 +75,18 @@ public class Main {
         System.out.println(player3.getSalary());
         player3.setSalary(650000);
         System.out.println(player3.getSalary());
+
+        /*AGGREGATION = REPRESENTS A "HAS-A" RELATIONSHIP BETWEEN OBJECTS
+                        ONE OBJECT CONTAINS ANOTHER OBJECT AS PART OF HIS STRUCTURE
+                        BUT THE CONTAINED OBJECT CAN EXIST INDEPENDENTLY
+        */
+        Book book1 = new Book("Hunger Games", 2010, 421);
+        Book book2 = new Book("Hunger Games 2", 2013, 395);
+        Book[] books = {book1, book2};
+        Library library = new Library("Library Baudour", "7331 Baudour", books);
+        library.displayInfo();
+        for(Book book : books){
+            book.displayInfo();
+        }
     }
 }
