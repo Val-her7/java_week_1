@@ -88,5 +88,13 @@ public class Main {
         for(Book book : books){
             book.displayInfo();
         }
+
+        /*COMPOSITION = REPRESENTS A "PART-OF" RELATIONSHIP BETWEEN OBJECTS
+                        ALLOWS COMPLEX OBJECTS TO BE CONSTRUCTED FROM SMALLER OBJECTS
+        */
+        Car myCar = new Car("Mercedes", "grey", "V8");
+
+        System.out.println(myCar.engine);
+        myCar.start();
     }
 }
