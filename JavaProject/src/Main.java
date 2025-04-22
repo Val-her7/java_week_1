@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args){
@@ -179,5 +182,27 @@ public class Main {
         }
 
         scanner.close();
+
+        /*WRITE FILES
+        FileWriter = GOOD FOR SMALL OR MEDIUM SIZED TEXT FILES
+        BufferedWriter = BETTER PERFORMANCE FOR LARGE AMOUNTS OF TEXT
+        PrintWriter = BEST FOR STRUCTURED DATA LIKE REPORTS OR LOGS
+        FileOutputStream = BEST FOR BINARY FILES (AUDIO, IMAGES)
+        */
+        String filePath = "C:\\Users\\valou\\OneDrive\\Bureau\\test.txt";
+        String content = "Hello Wolrd!\nIm Valentin";
+        try{
+            FileWriter writer = new FileWriter(filePath);
+            writer.write(content);
+            System.out.println("File has been written!");
+            writer.close();
+        }
+        catch(FileNotFoundException error){
+            System.out.println("Sorry, we cannot locate file location");
+        }
+        catch(IOException error){
+            System.out.println("Somethong went wrong");
+            error.printStackTrace();
+        }
     }
 }
