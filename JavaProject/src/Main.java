@@ -189,6 +189,7 @@ public class Main {
         PrintWriter = BEST FOR STRUCTURED DATA LIKE REPORTS OR LOGS
         FileOutputStream = BEST FOR BINARY FILES (AUDIO, IMAGES)
         */
+        //TEXT FILE
         String filePath = "C:\\Users\\valou\\OneDrive\\Bureau\\test.txt";
         String content = "Hello Wolrd!\nIm Valentin";
         try{
@@ -204,11 +205,11 @@ public class Main {
             System.out.println("Somethong went wrong");
             error.printStackTrace();
         }
-
+        
+        //CSV FILE
         try(FileWriter writer = new FileWriter("C:\\Users\\valou\\OneDrive\\Bureau\\test.csv")){
-            writer.write("name, age, nationality");
-            writer.write("Valentin, 24, belgian");
-            writer.close();
+            writer.write("name, age, nationality\n");
+            writer.write("Valentin, 24, belgian\n");
         }
         catch(FileNotFoundException error){
             System.out.println("Sorry, we cannot locate file location");
