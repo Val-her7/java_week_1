@@ -204,5 +204,18 @@ public class Main {
             System.out.println("Somethong went wrong");
             error.printStackTrace();
         }
+
+        try(FileWriter writer = new FileWriter("C:\\Users\\valou\\OneDrive\\Bureau\\test.csv")){
+            writer.write("name, age, nationality");
+            writer.write("Valentin, 24, belgian");
+            writer.close();
+        }
+        catch(FileNotFoundException error){
+            System.out.println("Sorry, we cannot locate file location");
+        }
+        catch(IOException error){
+            System.out.println("Somethong went wrong");
+            error.printStackTrace();
+        }
     }
 }
