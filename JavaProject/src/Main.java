@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args){
         Player player1 = new Player("Musiala", 22, "Midfielder", "German");
         Player player2 = new Player("Ito", 24, "Defender", "Japanese");
-        Player player3 = new Player("Pavlovic", 20, "Midfielder", "German", false);
+        Player player3 = new Player("Pavlovic", 20, "Midfielder", "German", false, 400000);
         Player player4 = new Player();
         Trainer trainer = new Trainer();
 
@@ -70,5 +70,10 @@ public class Main {
         }
 
         scanner.close();
+
+        //GETTER / SETTER => THEY HELP PROTECT OBJECT DATA AND ADD RULES FOR ACCESSING OR MODIFYING THEM
+        System.out.println(player3.getSalary());
+        player3.setSalary(650000);
+        System.out.println(player3.getSalary());
     }
 }

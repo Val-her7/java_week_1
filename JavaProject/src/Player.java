@@ -6,6 +6,7 @@ public class Player extends Team implements Work {
     String position;
     String nationality;
     boolean playTheMatch;
+    private double salary;
 
     //STATIC = VARIABLE OR METHOD NOT BELONGS TO SPECIFIC OBJECT BUT TO THE CLASS, OFTEN USED FOR SHARED RESSOURCES OR UTILITY METHODS
     static int numberOfPlayers = 0;
@@ -28,6 +29,16 @@ public class Player extends Team implements Work {
         this.nationality = nationality;
         this.playTheMatch = playTheMatch;
         numberOfPlayers ++;
+    }
+
+    Player(String name, int age, String position, String nationality, boolean playTheMatch, double salary){
+        this.name = name;
+        this.age = age;
+        this.position = position;
+        this.nationality = nationality;
+        this.playTheMatch = playTheMatch;
+        numberOfPlayers ++;
+        this.salary = salary;
     }
 
     Player(){
@@ -68,5 +79,20 @@ public class Player extends Team implements Work {
     @Override
     public void work(){
         System.out.println("Train vision, technique and endurance!");
+    }
+
+    //GETTER = METHOD THAT MAKE A FIELD READABLE
+    double getSalary(){
+        return this.salary;
+    }
+
+    //SETTER = METHOD THAT MAKE A FIELD WRITEABLE
+    void setSalary(double newSalary){
+        if(newSalary <= salary){
+            System.out.println("Player want a promotion, that's not enough!");
+        }
+        else if(newSalary > salary){
+            this.salary = newSalary;
+        }
     }
 }
