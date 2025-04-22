@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args){
@@ -71,8 +71,6 @@ public class Main {
             person = new Trainer();
             person.playInTeam();
         }
-
-        scanner.close();
 
         //GETTER / SETTER => THEY HELP PROTECT OBJECT DATA AND ADD RULES FOR ACCESSING OR MODIFYING THEM
         System.out.println(player3.getSalary());
@@ -153,5 +151,33 @@ public class Main {
         for(Object object : mix){
             System.out.println(object);
         }
+
+        /*EXCEPTIONS = AN EVENT THAT INTERRUPTS THE NORMAL FLOW OF THE PROGRAM
+                       (DIVIDING BY ZERO, FILE NOT FOUND, MISMATCH INPUT TYPE)
+                       SURROUND ANY DANGEROUS CODE WITH A TRY{} BLOCK
+                       TRY{} CATCH{} FINALLY{}
+        */
+        try{
+            System.out.print("Enter a number: ");
+            int num = scanner.nextInt();
+            int result = 10 / num;
+            System.out.println(result);
+        }
+        catch(ArithmeticException err){
+            System.out.println("You cannot divide by zero!");
+        }
+        catch(InputMismatchException err){
+            System.out.println("Please enter a number");
+        }
+        catch(Exception err) {
+            //SAFETY NET = WHEN SOMETHING YOU NOT ANTICIPATED
+            System.out.println("Something went wrong");
+        }
+        finally{
+            //EXECUTE EVEN IF EXCEPTION OCCURES- CLOSE SCANNER, CLOSE FILE FOR EXAMPLE
+            System.out.println("This is always executed");
+        }
+
+        scanner.close();
     }
 }
