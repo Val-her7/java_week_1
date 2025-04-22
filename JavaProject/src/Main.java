@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -128,5 +131,27 @@ public class Main {
 
         System.out.println(Character.isLetter(c));
         System.out.println(Character.isUpperCase(c));
+
+        //ARRAYLIST = A RESIZEABLE ARRAY THAT STORES OBJECTS(AUTOBOXING), ARRAYS ARE FIXED IN SIZE BUT ARRAYLISTS CAN CHANGES AND HAVE DIFFERENT DATA TYPES
+        ArrayList<Integer> ids = new ArrayList<>();
+        ids.add(1);
+        ids.add(2);
+        ids.add(3);
+        ids.add(5);
+        ids.set(1, 4);
+        System.out.println(ids.get(0));
+        Collections.sort(ids);
+        System.out.println(ids);
+        System.out.println(ids.size());
+
+        ArrayList<Object> mix = new ArrayList<>();
+        mix.add("Valentin");
+        mix.add(24);
+        mix.add(true);
+        mix.set(2, false);
+        System.out.println(mix);
+        for(Object object : mix){
+            System.out.println(object);
+        }
     }
 }
