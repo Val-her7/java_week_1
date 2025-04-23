@@ -270,7 +270,10 @@ public class Main {
         String newDateTime = datetime.format(formatter);
         System.out.println(newDateTime);
 
-        //ANONYMOUS CLASS
+        /*ANONYMOUS CLASS = A CLASS THAT DOESN'T HAVE A NAME. CANNOT BE REUSED
+                            ADD CUSTOM BEHAVIOR WITHOUT HAVING TO CREATE A NEW CLASS
+                            OFTEN USED FOR ONE TIME USES (TIMERTASK, RUNNABLE, CALLBACKS)
+        */
         Trainer trainer2 = new Trainer(){
             @Override
             public void work(){
