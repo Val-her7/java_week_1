@@ -19,5 +19,8 @@ public class App {
 
         //Challenge4
         Challenge4.divideByZero();
+
+        //Challenge5
+        Challenge5.readFile();
     }
 }
