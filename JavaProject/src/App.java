@@ -22,5 +22,8 @@ public class App {
 
         //Challenge5
         Challenge5.readFile();
+
+        //Challenge6
+        Challenge6.readFile();
     }
 }
