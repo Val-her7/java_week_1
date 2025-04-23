@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.io.BufferedReader;
@@ -318,5 +319,25 @@ public class Main {
         Box<Integer> box2 = new Box<>();
         box2.setItem(7);
         System.out.println(box2.getItem());
+
+        /*HASHMAPS = A DATA STRUCTURE THAT STORES KEY-VALUES PAIRS
+                     KEYS ARE UNIQUE BUT VALUES ARE DUPLICATED
+                     DOES NOT MAINTAIN ANY ORDER BUT IS MEMORY EFFICIENT
+                     HashMap<Key, Value>
+        */
+        HashMap<String, Double> products = new HashMap<>();
+
+        products.put("apple", 0.99);
+        products.put("banana", 1.99);
+        products.put("orange", 1.49);
+        products.put("coconut", 1.99);
+
+        System.out.println(products.get("orange"));
+        System.out.println(products.containsKey("apple"));
+        System.out.println(products.containsValue(2.99));
+
+        for(String key: products.keySet()){
+            System.out.println(key + ": $" + products.get(key));
+        }
     }
 }
