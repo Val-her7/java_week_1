@@ -269,5 +269,15 @@ public class Main {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String newDateTime = datetime.format(formatter);
         System.out.println(newDateTime);
+
+        //ANONYMOUS CLASS
+        Trainer trainer2 = new Trainer(){
+            @Override
+            public void work(){
+                System.out.println("Physical Trainer");
+            }
+        };
+        trainer2.work();
+        trainer.work();
     }
 }
