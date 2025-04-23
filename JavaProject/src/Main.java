@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.Instant;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main {
     public static void main(String[] args){
@@ -282,5 +284,26 @@ public class Main {
         };
         trainer2.work();
         trainer.work();
+
+        /*TIMER = CLASS THAT SCHEDULES TASKS AT SPECIFIC TIMES OR PERIODICALLY
+                  USEFUL FOR: SENDING NOTIFICATIONS, SCHEDULED UPDATES, REPETITIVE ACTIONS
+
+        TIMERTASK = REPRESENTS THE TASK THAT WILL BE EXECUTED BY THE TIMER
+                    YOU WILL EXTEND THE TIMERTASK CLASS TO DEFINE YOUR CLASS (OVERRIDE RUN())
+        */
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            int count = 5;
+            @Override
+            public void run(){
+                System.out.println("Java is cool!");
+                count--;
+                if(count <= 0){
+                    System.out.println("TASK COMPLETED!");
+                    timer.cancel();
+                }
+            }
+        };
+        timer.schedule(task, 0, 1000);
     }
 }
