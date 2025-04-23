@@ -16,5 +16,8 @@ public class App {
         for(Object type: types){
             System.out.println(type);
         }
+
+        //Challenge4
+        Challenge4.divideByZero();
     }
 }
