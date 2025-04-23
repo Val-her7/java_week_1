@@ -7,6 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.Instant;
 
 public class Main {
     public static void main(String[] args){
@@ -240,5 +245,29 @@ public class Main {
             System.out.println("Somethong went wrong");
             error.printStackTrace();
         }
+
+        //DATES AND TIMES
+        LocalDate date = LocalDate.now();
+        LocalDate date2 = LocalDate.of(2024, 1, 9);
+        System.out.println(date);
+        System.out.println(date2);
+        System.out.println(date.isBefore(date2));
+        System.out.println(date.isAfter(date2));
+        System.out.println(date.isEqual(date2));
+
+        LocalTime time = LocalTime.now();
+        System.out.println(time);
+
+        LocalDateTime datetime = LocalDateTime.now();
+        System.out.println(datetime);
+
+        //UTC TIMESTAMP
+        Instant instant = Instant.now();
+        System.out.println(instant);
+
+        //CUSTOM FORMAT
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String newDateTime = datetime.format(formatter);
+        System.out.println(newDateTime);
     }
 }
