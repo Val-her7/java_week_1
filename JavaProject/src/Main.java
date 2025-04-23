@@ -305,5 +305,18 @@ public class Main {
             }
         };
         timer.schedule(task, 0, 1000);
+
+        /*GENERICS = A CONCEPT WHERE YOU CAN WRITE A CLASS, INTERFACE OR METHOD
+                     THAT IS COMPATIBLE WITH DIFFERENT DATA TYPES.
+                     <T> TYPE PARAMETER (PLACEHOLDER THAT GETS REPLACED WITH A REAL TYPE)
+                     <String> TYPE ARGUMENT (SPECIFIES THE TYPE)
+         */
+        Box<String> box1 = new Box<>();
+        box1.setItem("Pizza");
+        System.out.println(box1.getItem());
+
+        Box<Integer> box2 = new Box<>();
+        box2.setItem(7);
+        System.out.println(box2.getItem());
     }
 }
