@@ -1,5 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
+
+        //Challenge1
         System.out.println("Week Day: " + Challenge1.weekDay);
         System.out.println("Unread Mails: " + Challenge1.unreadMails);
         System.out.println("Kosovo Population: " + Challenge1.kosovoPopulation);
@@ -8,5 +10,11 @@ public class App {
         System.out.println("Is True: " + Challenge1.isTrue);
         System.out.println("Pi: " + Challenge1.pi);
         System.out.println("Total Bill: " + Challenge1.totalBill);
+
+        //Challenge2
+        Object[] types = {Challenge2.weekDay, Challenge2.unreadMails, Challenge2.kosovoPopulation, Challenge2.worldPopulation};
+        for(Object type: types){
+            System.out.println(type);
+        }
     }
 }
